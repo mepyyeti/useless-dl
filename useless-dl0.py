@@ -9,22 +9,22 @@ def teach():
 		term = str(input('enter content to memorize: '))
 		term=term.lower().strip()
 		my_list.append(term)
-		if my_list[0] == term:
+		if my_list[0] == term and my_list[i-1] == term:
 			i+=1
 			if i >= 3:
 				print(f'Success...I remember {term}')
+				print(my_list)
 				carry_on()
 		else:
 			print('Oops..best start over...\nOr give up...')
-			i+=0
-			print(my_list)
+			i=0
 			del my_list[:]
-			print(my_list)
+			carry_on()
 
 def carry_on():
 	while True:
 		keep_learning = str(input('Keep learning? [y/n]'))
-		if keep_learning != 'y':
+		if keep_learning.lower().strip() != 'y':
 			print('thank you. good bye.')
 			quit()
 		else:
@@ -32,6 +32,6 @@ def carry_on():
 
 if __name__=='__main__':
 	teach()
-	carry_on()
 else:
 	print(f'no can do. {__name__} won\'t run.') 
+
