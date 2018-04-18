@@ -11,6 +11,8 @@ def teach():
 		my_list.append(term)
 		if my_list[0] == term:
 			i+=1
+			if i == 2:
+				print('I\'m learning...slowly, I suspect, but surely.')
 			if i >= 3:
 				print(f'Success...I remember {term}')
 				carry_on()
